@@ -2,6 +2,7 @@ package parameters
 
 import (
 	"github.com/gclkaze/evalang-globals/globals"
+	"github.com/gclkaze/evalang-globals/globals/stackvalue"
 )
 
 type IVariableParameterValue interface {
@@ -9,7 +10,7 @@ type IVariableParameterValue interface {
 	Copy() globals.ParameterValue
 	IsHidden() bool
 	SetIsHidden(isHidden bool)
-	//	OwnsReference(s stackvalue.StackValue) bool
+	OwnsReference(s stackvalue.StackValue) bool
 	IsEmpty() bool
 	GetName() string
 	GetValue() any
@@ -19,7 +20,7 @@ type IVariableParameterValue interface {
 	GetValueType() globals.StatementParameterTypeBase
 	SetValue(value globals.ParameterValue)
 	Length() int
-	//	Assign(value stackvalue.StackValue) error
+	Assign(value stackvalue.StackValue) error
 	SetPrimitiveValue(value any, t globals.StatementParameterTypeBase)
 	Dump()
 	Clear()

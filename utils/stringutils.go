@@ -179,6 +179,11 @@ func WriteFile(dir string, filename string, content []byte) error {
 	return err
 }
 
+func RemoveFile(path string) error {
+	err := os.Remove(path)
+	return err
+}
+
 func GetLimitedString(s string, limit int) string {
 	if len(s) < limit+1 {
 		return s

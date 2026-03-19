@@ -52,7 +52,7 @@ const (
 	MetricsIndexSave
 	Post
 	DeleteFile
-	WriteFile
+	FileWrite
 	OpenFile
 	TouchFile
 	CompareFile
@@ -276,6 +276,8 @@ func (e StatementOp) String() string {
 		return "wait"
 	case FileRead:
 		return "fileRead"
+	case FileWrite:
+		return "fileWrite"
 	case BrowserType:
 		return "type"
 	case BrowserClose:
@@ -336,8 +338,6 @@ func (e StatementOp) String() string {
 		return "post"
 	case DeleteFile:
 		return "deleteFile"
-	case WriteFile:
-		return "writeFile"
 	case OpenFile:
 		return "openFile"
 	case TouchFile:

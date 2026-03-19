@@ -77,6 +77,7 @@ const (
 	EXT_Load
 	EXT_Execute
 	EXT_Unload
+	TM_Now
 
 	//SLK_ReadMessage
 )
@@ -382,6 +383,8 @@ func (e StatementOp) String() string {
 		return "external::execute"
 	case EXT_Unload:
 		return "external::unload"
+	case TM_Now:
+		return "time::now"
 		/*	case SLK_ReadMessage:
 			return "slack::readMessage"*/
 	default:

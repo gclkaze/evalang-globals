@@ -161,7 +161,6 @@ func FileExists(filename string) bool {
 
 func ReadFile(filename string) *string {
 	content, err := os.ReadFile(filename)
-
 	if err != nil {
 		return nil
 	}

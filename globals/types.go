@@ -46,13 +46,14 @@ const (
 	DbWrite
 	DbConnect
 	DbPing
-	FileRead
 	RESTClientCreate
 	RESTGET
 	MetricsIndexSave
 	Post
 	DeleteFile
+	FileRead
 	FileWrite
+	FileExists
 	OpenFile
 	TouchFile
 	CompareFile
@@ -279,6 +280,8 @@ func (e StatementOp) String() string {
 		return "fileRead"
 	case FileWrite:
 		return "fileWrite"
+	case FileExists:
+		return "fileExists"
 	case BrowserType:
 		return "type"
 	case BrowserClose:

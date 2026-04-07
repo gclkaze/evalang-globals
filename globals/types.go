@@ -79,6 +79,18 @@ const (
 	EXT_Execute
 	EXT_Unload
 	TM_Now
+	ENV_Get
+	ENV_Set
+	ENV_Unset
+	ENV_All
+	ENV_Exists
+	ENV_Os
+	ENV_Hostname
+	ENV_Username
+	ENV_Cwd
+	ENV_Tempdir
+	ENV_Homedir
+	ENV_Executioncontext
 
 	//SLK_ReadMessage
 )
@@ -388,6 +400,31 @@ func (e StatementOp) String() string {
 		return "external::unload"
 	case TM_Now:
 		return "time::now"
+	case ENV_Get:
+		return "environment::get"
+	case ENV_Set:
+		return "environment::set"
+	case ENV_Unset:
+		return "environment::unset"
+	case ENV_All:
+		return "environment::all"
+	case ENV_Exists:
+		return "environment::exists"
+	case ENV_Os:
+		return "environment::os"
+	case ENV_Hostname:
+		return "environment::hostname"
+	case ENV_Username:
+		return "environment::username"
+	case ENV_Cwd:
+		return "environment::cwd"
+	case ENV_Tempdir:
+		return "environment::tempDir"
+	case ENV_Homedir:
+		return "environment::homeDir"
+	case ENV_Executioncontext:
+		return "environment::executionContext"
+
 		/*	case SLK_ReadMessage:
 			return "slack::readMessage"*/
 	default:

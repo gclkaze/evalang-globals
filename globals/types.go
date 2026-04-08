@@ -91,6 +91,17 @@ const (
 	ENV_Tempdir
 	ENV_Homedir
 	ENV_Executioncontext
+	JSN_Parse
+	JSN_Set
+	JSN_Remove
+	JSN_ArrayAppend
+	JSN_ArrayRemove
+	JSN_Exists
+	JSN_GetOrDefault
+	JSN_ArrayGet
+	JSN_ArrayGetOrDefault
+	JSN_ArrayContains
+	JSN_Merge
 
 	//SLK_ReadMessage
 )
@@ -119,6 +130,8 @@ const (
 	REFERENCE
 	WORKSPACE
 	JENKINS
+	ENVIRONMENT
+	JSON_PACKAGE
 	VAULT
 	SLACK
 	DISCORD
@@ -217,6 +230,12 @@ func GetUserFriendlyType(e string) StatementParameterTypeBase {
 		return EXTERNAL
 	case "user-defined":
 		return USER_DEFINED
+	case "env":
+		return ENVIRONMENT
+	case "json package":
+		{
+			return JSON_PACKAGE
+		}
 	default:
 		return NULL
 	}
@@ -267,6 +286,10 @@ func (e StatementParameterTypeBase) String() string {
 		return "External"
 	case USER_DEFINED:
 		return "UserDefined"
+	case ENVIRONMENT:
+		return "Environment"
+	case JSON_PACKAGE:
+		return "Json"
 	default:
 		return "Unknown"
 	}
@@ -424,7 +447,28 @@ func (e StatementOp) String() string {
 		return "environment::homeDir"
 	case ENV_Executioncontext:
 		return "environment::executionContext"
-
+	case JSN_Parse:
+		return "json::parse"
+	case JSN_Set:
+		return "json::set"
+	case JSN_Remove:
+		return "json::remove"
+	case JSN_ArrayAppend:
+		return "json::arrayAppend"
+	case JSN_ArrayRemove:
+		return "json::arrayRemove"
+	case JSN_Exists:
+		return "json::exists"
+	case JSN_GetOrDefault:
+		return "json::getOrDefault"
+	case JSN_Merge:
+		return "json::merge"
+	case JSN_ArrayGet:
+		return "json::arrayGet"
+	case JSN_ArrayGetOrDefault:
+		return "json::arrayGetOrDefault"
+	case JSN_ArrayContains:
+		return "json::arrayContains"
 		/*	case SLK_ReadMessage:
 			return "slack::readMessage"*/
 	default:

@@ -102,6 +102,9 @@ const (
 	JSN_ArrayGetOrDefault
 	JSN_ArrayContains
 	JSN_Merge
+	JSN_ArrayParse
+	JSN_TestParse
+	JSN_ArrayTestParse
 
 	//SLK_ReadMessage
 )
@@ -469,6 +472,12 @@ func (e StatementOp) String() string {
 		return "json::arrayGetOrDefault"
 	case JSN_ArrayContains:
 		return "json::arrayContains"
+	case JSN_ArrayParse:
+		return "json::arrayParse"
+	case JSN_TestParse:
+		return "json::testParse"
+	case JSN_ArrayTestParse:
+		return "json::arrayTestParse"
 		/*	case SLK_ReadMessage:
 			return "slack::readMessage"*/
 	default:

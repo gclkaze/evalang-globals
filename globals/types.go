@@ -114,6 +114,7 @@ const (
 	JSN_ArrayPluck
 	JSN_ArrayChunk
 	JSN_ArraySlice
+	JSN_ArrayInsert
 	//SLK_ReadMessage
 )
 
@@ -504,6 +505,8 @@ func (e StatementOp) String() string {
 		return "json::arrayChunk"
 	case JSN_ArraySlice:
 		return "json::arraySlice"
+	case JSN_ArrayInsert:
+		return "json::arrayInsert"
 		/*	case SLK_ReadMessage:
 			return "slack::readMessage"*/
 	default:

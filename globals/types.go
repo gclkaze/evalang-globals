@@ -105,7 +105,15 @@ const (
 	JSN_ArrayParse
 	JSN_TestParse
 	JSN_ArrayTestParse
-
+	JSN_Keys
+	JSN_FilterAttributes
+	JSN_ArrayFilterAttributes
+	JSN_Map
+	JSN_ArrayMap
+	JSN_ArrayIsEmpty
+	JSN_ArrayPluck
+	JSN_ArrayChunk
+	JSN_ArraySlice
 	//SLK_ReadMessage
 )
 
@@ -478,6 +486,24 @@ func (e StatementOp) String() string {
 		return "json::testParse"
 	case JSN_ArrayTestParse:
 		return "json::arrayTestParse"
+	case JSN_Keys:
+		return "json::keys"
+	case JSN_FilterAttributes:
+		return "json::filterAttributes"
+	case JSN_ArrayFilterAttributes:
+		return "json::arrayFilterAttributes"
+	case JSN_Map:
+		return "json::map"
+	case JSN_ArrayMap:
+		return "json::arrayMap"
+	case JSN_ArrayIsEmpty:
+		return "json::arrayIsEmpty"
+	case JSN_ArrayPluck:
+		return "json::arrayPluck"
+	case JSN_ArrayChunk:
+		return "json::arrayChunk"
+	case JSN_ArraySlice:
+		return "json::arraySlice"
 		/*	case SLK_ReadMessage:
 			return "slack::readMessage"*/
 	default:

@@ -191,3 +191,15 @@ func JSONDiff(first globals.JSONObjectGen, second globals.JSONObjectGen) bool {
 	log.Println(diffString)
 	return false //s.value == strV.value
 }
+
+func GetJSONKeys(o globals.JSONObjectGen) ([]string, error) {
+	var keys []string
+	cd, ok := o.(map[string]interface{})
+	if !ok {
+		return nil, fmt.Errorf("coulnd't cast to JSON")
+	}
+	for k := range cd {
+		keys = append(keys, k)
+	}
+	return keys, nil
+}

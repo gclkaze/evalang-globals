@@ -66,6 +66,8 @@ const (
 	WS_Stop
 	WS_WriteFile
 	WS_ArchiveFile
+	WS_StartScript
+	WS_KillScript
 	JNK_Connect
 	JNK_Execute
 	VLT_Connect
@@ -407,6 +409,11 @@ func (e StatementOp) String() string {
 		return "workspace::runCommand"
 	case WS_ArchiveFile:
 		return "workspace::archiveFile"
+	case WS_StartScript:
+		return "workspace::startScript"
+	case WS_KillScript:
+		return "workspace::killScript"
+
 	case JNK_Connect:
 		return "jenkins::connect"
 	case JNK_Execute:

@@ -9,15 +9,15 @@ import (
 )
 
 func IsProcessRunningWindows(processName string) bool {
-	cmd := exec.Command("wmic", "process", "get", "Caption,ProcessId,CommandLine")
+	ctx, cancel := context.WithTimeout(context.Background(), 5*time.Second)
+	defer cancel()
 
-	// Run the command and capture output
+	cmd := exec.CommandContext(ctx, "wmic", "process", "get", "Caption,ProcessId,CommandLine")
 	output, err := cmd.Output()
 	if err != nil {
 		fmt.Println("Error:", err)
 		return false
 	}
-	//fmt.Print(string(output))
 	return strings.Contains(string(output), processName)
 }
 

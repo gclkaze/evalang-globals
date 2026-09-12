@@ -6,6 +6,7 @@ const (
 	REDIS LoggerType = iota
 	STD
 	JSON
+	STRING
 )
 
 type ILogger interface {

@@ -21,6 +21,7 @@ const (
 	REST
 	REFERENCE
 	USER_DEFINED
+	WEB_ELEMENT
 )
 
 func (e StackValueType) String() string {
@@ -51,6 +52,8 @@ func (e StackValueType) String() string {
 		return "REST"
 	case REFERENCE:
 		return "Reference"
+	case WEB_ELEMENT:
+		return "WebElement"
 	default:
 		return fmt.Sprintf("%d", int(e))
 	}

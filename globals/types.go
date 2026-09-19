@@ -152,6 +152,8 @@ const (
 	EXTERNAL
 	USER_DEFINED
 	VARIADIC
+	WEB_ELEMENT
+	WEB_ELEMENT_LIST
 )
 
 type JSONStruct = map[string]interface{}
@@ -228,6 +230,10 @@ func GetUserFriendlyType(e string) StatementParameterTypeBase {
 		return NUMBER
 	case "list":
 		return LIST
+	case "web element":
+		return WEB_ELEMENT
+	case "web element list":
+		return WEB_ELEMENT_LIST
 	case "html":
 		return HTML_ELEM
 	case "worskpace":
@@ -286,6 +292,10 @@ func (e StatementParameterTypeBase) String() string {
 		return "List"
 	case HTML_ELEM:
 		return "HTML Element"
+	case WEB_ELEMENT:
+		return "Web Element"
+	case WEB_ELEMENT_LIST:
+		return "Web Element List"
 	case WORKSPACE:
 		return "Worskpace"
 	case JENKINS:

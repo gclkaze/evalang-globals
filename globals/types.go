@@ -21,6 +21,7 @@ const (
 	BrowserClickElement
 	BrowserReadElement
 	BrowserFindElement
+	BrowserSmartFindElement
 	BrowserScreenshot
 	BrowserSavePage
 	BrowserScroll
@@ -359,6 +360,8 @@ func (e StatementOp) String() string {
 		return "findElement"
 	case BrowserClickElement:
 		return "clickElement"
+	case BrowserSmartFindElement:
+		return "smartFindElement"
 	case AssertEquals:
 		return "assertEquals"
 	case AssertNotEquals:

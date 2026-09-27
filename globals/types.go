@@ -26,6 +26,8 @@ const (
 	BrowserSavePage
 	BrowserScroll
 	BrowserScrollElement
+	BrowserMasterTabOpen
+	BrowserMasterClose
 	Wait
 	JsonValue
 	AssertEquals
@@ -382,6 +384,10 @@ func (e StatementOp) String() string {
 		return "err"
 	case Regex:
 		return "regex"
+	case BrowserMasterClose:
+		return "browserMasterClose"
+	case BrowserMasterTabOpen:
+		return "browserMasterTabOpen"
 	case BrowserReadElement:
 		return "readElement"
 	case UploadFile:

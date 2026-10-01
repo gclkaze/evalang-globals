@@ -28,6 +28,7 @@ const (
 	BrowserScrollElement
 	BrowserMasterTabOpen
 	BrowserMasterClose
+	BrowserTestOperation
 	Wait
 	JsonValue
 	AssertEquals
@@ -362,6 +363,8 @@ func (e StatementOp) String() string {
 		return "findElement"
 	case BrowserClickElement:
 		return "clickElement"
+	case BrowserTestOperation:
+		return "browserTestOperation"
 	case BrowserSmartFindElement:
 		return "smartFindElement"
 	case AssertEquals:

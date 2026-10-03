@@ -13,13 +13,13 @@ func IsProcessRunningWindows(processName string) bool {
 	ctx, cancel := context.WithTimeout(context.Background(), 5*time.Second)
 	defer cancel()
 
-	cmd := exec.CommandContext(ctx, "wmic", "process", "get", "Caption,ProcessId,CommandLine")
+	cmd := exec.CommandContext(ctx, "tasklist", "/FO", "CSV", "/NH")
 	output, err := cmd.Output()
 	if err != nil {
 		fmt.Println("Error:", err)
 		return false
 	}
-	return strings.Contains(string(output), processName)
+	return strings.Contains(strings.ToLower(string(output)), strings.ToLower(processName))
 }
 
 func ContainerIsRunning(container string) (bool, error) {

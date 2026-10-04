@@ -83,6 +83,7 @@ const (
 	DIS_Stop
 	EXT_Load
 	EXT_Execute
+	EXT_FreeStringFunctionRegister
 	EXT_Unload
 	TM_Now
 	ENV_Get
@@ -456,6 +457,8 @@ func (e StatementOp) String() string {
 		return "discord::sendMessage"
 	case DIS_Stop:
 		return "discord::stop"
+	case EXT_FreeStringFunctionRegister:
+		return "external::freeStringFunctionRegister"
 	case EXT_Load:
 		return "external::load"
 	case EXT_Execute:

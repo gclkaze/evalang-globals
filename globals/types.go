@@ -192,6 +192,7 @@ const (
 	OPERATION StatementType = iota
 	FOR_LOOP
 	CONTROL
+	RETURN
 	CONTINUE
 	BREAK
 	IMPORT

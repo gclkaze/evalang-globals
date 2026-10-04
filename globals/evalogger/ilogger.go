@@ -7,6 +7,7 @@ const (
 	STD
 	JSON
 	STRING
+	COMPACT
 )
 
 type ILogger interface {

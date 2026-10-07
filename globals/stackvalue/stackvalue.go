@@ -40,6 +40,8 @@ func (e StackValueType) String() string {
 		return "Integer"
 	case DOUBLE:
 		return "Double"
+	case USER_DEFINED:
+		return "UserDefined"
 	case BOOL:
 		return "Bool"
 	case NULL:

@@ -24,7 +24,9 @@ func ParseHTMLByXPATHAndGetOne(content string, xpath string) (value string, err 
 	if err != nil {
 		return "", err
 	}
-
+	if len(list) == 0 {
+		return "", fmt.Errorf("no node matches the XPath %q", xpath)
+	}
 	if len(list) > 1 {
 		return "", fmt.Errorf("found more than one results")
 	}

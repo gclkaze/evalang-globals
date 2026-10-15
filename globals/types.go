@@ -16,6 +16,7 @@ type StatementOp int
 const (
 	NOP StatementOp = iota
 	BrowserOpen
+	BrowserRefresh
 	BrowserClose
 	BrowserType
 	BrowserClickElement
@@ -339,6 +340,8 @@ func (e StatementOp) String() string {
 		return "getHTMLElementAttribute"
 	case BrowserOpen:
 		return "browserOpen"
+	case BrowserRefresh:
+		return "browserRefresh"
 	case Wait:
 		return "wait"
 	case FileRead:

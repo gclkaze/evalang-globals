@@ -123,6 +123,65 @@ const (
 	JSN_ArrayChunk
 	JSN_ArraySlice
 	JSN_ArrayInsert
+	RND_GetIntInRange
+	RND_GetDoubleInRange
+	RND_GetString
+	RND_GetBool
+	RND_GetPick
+	RND_GetShuffled
+	RND_GetUuid
+	RND_Seed
+	MTH_Round
+	MTH_Abs
+	MTH_Clamp
+	MTH_Min
+	MTH_Max
+	MTH_Sum
+	MTH_Avg
+	MTH_Stats
+	MTH_Percent
+	MTH_Sin
+	MTH_Cos
+	MTH_Tan
+	MTH_Arctan
+	MTH_Sqrt
+	EML_Send
+	EML_SendEach
+	EML_Render
+	EML_Validate
+	EML_Connect
+	EML_Close
+	RND_GetStringInRange
+	JSN_InferSchema
+	JSN_MergeSchema
+	JSN_Validate
+	JSN_DiffSchema
+	JSN_Transform
+	JSN_ToGo
+	JSN_ToTs
+	JSN_Fake
+	HTTP_Request
+	HTTP_Get
+	HTTP_GetAll
+	HTTP_Each
+	HTTP_Post
+	HTTP_Put
+	HTTP_Patch
+	HTTP_Delete
+	RESTPOST
+	RESTPUT
+	RESTPATCH
+	RESTDELETE
+	TM_NowDateTime
+	TM_Today
+	TM_ParseDate
+	TM_ParseDateTime
+	TM_Format
+	TM_ToDate
+	TM_ToDateTime
+	TM_Add
+	TM_Diff
+	TM_Sleep
 	//SLK_ReadMessage
 )
 
@@ -160,6 +219,8 @@ const (
 	VARIADIC
 	WEB_ELEMENT
 	WEB_ELEMENT_LIST
+	MAILER
+	DATETIME
 )
 
 type JSONStruct = map[string]interface{}
@@ -259,6 +320,10 @@ func GetUserFriendlyType(e string) StatementParameterTypeBase {
 		return USER_DEFINED
 	case "env":
 		return ENVIRONMENT
+	case "mailer":
+		return MAILER
+	case "datetime":
+		return DATETIME
 	case "json package":
 		{
 			return JSON_PACKAGE
@@ -321,6 +386,12 @@ func (e StatementParameterTypeBase) String() string {
 		return "Environment"
 	case JSON_PACKAGE:
 		return "Json"
+	case MAILER:
+		return "Mailer"
+	case DATETIME:
+		return "DateTime"
+	case HTTP_CLIENT:
+		return "HTTP Client"
 	default:
 		return "Unknown"
 	}
@@ -543,6 +614,124 @@ func (e StatementOp) String() string {
 		return "json::arraySlice"
 	case JSN_ArrayInsert:
 		return "json::arrayInsert"
+	case RND_GetIntInRange:
+		return "random::getIntInRange"
+	case RND_GetDoubleInRange:
+		return "random::getDoubleInRange"
+	case RND_GetString:
+		return "random::getString"
+	case RND_GetBool:
+		return "random::getBool"
+	case RND_GetPick:
+		return "random::getPick"
+	case RND_GetShuffled:
+		return "random::getShuffled"
+	case RND_GetUuid:
+		return "random::getUuid"
+	case RND_Seed:
+		return "random::seed"
+	case RND_GetStringInRange:
+		return "random::getStringInRange"
+	case MTH_Round:
+		return "math::round"
+	case MTH_Abs:
+		return "math::abs"
+	case MTH_Clamp:
+		return "math::clamp"
+	case MTH_Min:
+		return "math::min"
+	case MTH_Max:
+		return "math::max"
+	case MTH_Sum:
+		return "math::sum"
+	case MTH_Avg:
+		return "math::avg"
+	case MTH_Stats:
+		return "math::stats"
+	case MTH_Percent:
+		return "math::percent"
+	case MTH_Sin:
+		return "math::sin"
+	case MTH_Cos:
+		return "math::cos"
+	case MTH_Tan:
+		return "math::tan"
+	case MTH_Arctan:
+		return "math::arctan"
+	case MTH_Sqrt:
+		return "math::sqrt"
+	case EML_Send:
+		return "email::send"
+	case EML_SendEach:
+		return "email::sendEach"
+	case EML_Render:
+		return "email::render"
+	case EML_Validate:
+		return "email::validate"
+	case EML_Connect:
+		return "email::connect"
+	case EML_Close:
+		return "email::close"
+	case JSN_InferSchema:
+		return "json::inferSchema"
+	case JSN_MergeSchema:
+		return "json::mergeSchema"
+	case JSN_Validate:
+		return "json::validate"
+	case JSN_DiffSchema:
+		return "json::diffSchema"
+	case JSN_Transform:
+		return "json::transform"
+	case JSN_ToGo:
+		return "json::toGo"
+	case JSN_ToTs:
+		return "json::toTs"
+	case JSN_Fake:
+		return "json::fake"
+	case HTTP_Request:
+		return "http::request"
+	case HTTP_Get:
+		return "http::get"
+	case HTTP_GetAll:
+		return "http::getAll"
+	case HTTP_Each:
+		return "http::each"
+	case HTTP_Post:
+		return "http::post"
+	case HTTP_Put:
+		return "http::put"
+	case HTTP_Patch:
+		return "http::patch"
+	case HTTP_Delete:
+		return "http::delete"
+	case RESTPOST:
+		return "restPOSTRequest"
+	case RESTPUT:
+		return "restPUTRequest"
+	case RESTPATCH:
+		return "restPATCHRequest"
+	case RESTDELETE:
+		return "restDELETERequest"
+	case TM_NowDateTime:
+		return "time::nowDateTime"
+	case TM_Today:
+		return "time::today"
+	case TM_ParseDate:
+		return "time::parseDate"
+	case TM_ParseDateTime:
+		return "time::parseDateTime"
+	case TM_Format:
+		return "time::format"
+	case TM_ToDate:
+		return "time::toDate"
+	case TM_ToDateTime:
+		return "time::toDateTime"
+	case TM_Add:
+		return "time::add"
+	case TM_Diff:
+		return "time::diff"
+	case TM_Sleep:
+		return "time::sleep"
 		/*	case SLK_ReadMessage:
 			return "slack::readMessage"*/
 	default:

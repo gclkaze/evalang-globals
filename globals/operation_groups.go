@@ -31,7 +31,7 @@ var JsonSchemaOperations = []StatementOp{
 // restGETRequest stay as they are; Http:: ops accept their client.
 var HttpOperations = []StatementOp{
 	HTTP_Request, HTTP_Get, HTTP_GetAll, HTTP_Each,
-	HTTP_Post, HTTP_Put, HTTP_Patch, HTTP_Delete,
+	HTTP_Post, HTTP_Put, HTTP_Patch, HTTP_Delete, HTTP_Ping,
 }
 
 // RESTMethodOperations are restPOSTRequest, restPUTRequest, restPATCHRequest

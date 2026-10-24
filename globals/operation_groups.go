@@ -12,8 +12,12 @@ var RandomOperations = []StatementOp{
 
 // MathOperations lists every math:: operation.
 var MathOperations = []StatementOp{
-	MTH_Round, MTH_Abs, MTH_Clamp, MTH_Min, MTH_Max, MTH_Sum, MTH_Avg, MTH_Stats, MTH_Percent,
-	MTH_Sin, MTH_Cos, MTH_Tan, MTH_Arctan, MTH_Sqrt,
+	MTH_Round, MTH_Abs, MTH_Clamp, MTH_Min, MTH_Max, MTH_Sum, MTH_Avg,
+	MTH_Stats, MTH_Percent, MTH_Sin, MTH_Cos, MTH_Tan, MTH_Arctan,
+	MTH_Sqrt, MTH_Pi, MTH_E, MTH_Pow, MTH_Floor, MTH_Ceil,
+	MTH_Trunc, MTH_Mod, MTH_Exp, MTH_Log, MTH_Log10, MTH_Log2,
+	MTH_Arcsin, MTH_Arccos, MTH_Arctan2, MTH_Sign,
+	MTH_Hypot, MTH_Cbrt, MTH_ToRadians, MTH_ToDegrees,
 }
 
 // EmailOperations lists every email:: operation.

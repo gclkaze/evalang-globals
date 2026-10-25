@@ -68,5 +68,6 @@ var StatementOnlyOperations = map[StatementOp]bool{
 	HTTP_Put:     true, // network side effect, two outputs
 	HTTP_Patch:   true, // network side effect, two outputs
 	HTTP_Delete:  true, // network side effect, two outputs
+	HTTP_Ping:    true, // network side effect
 	TM_Sleep:     true, // no value
 }

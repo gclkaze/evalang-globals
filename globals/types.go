@@ -431,6 +431,11 @@ const (
 	GIT_Status
 	GIT_Log
 	GIT_Tag
+	GIT_Commit
+	GIT_Push
+	GIT_Checkout
+	GIT_Merge
+	GIT_CurrentBranch
 	//SLK_ReadMessage
 )
 
@@ -1519,6 +1524,16 @@ func (e StatementOp) String() string {
 		return "git::log"
 	case GIT_Tag:
 		return "git::tag"
+	case GIT_Commit:
+		return "git::commit"
+	case GIT_Push:
+		return "git::push"
+	case GIT_Checkout:
+		return "git::checkout"
+	case GIT_Merge:
+		return "git::merge"
+	case GIT_CurrentBranch:
+		return "git::currentBranch"
 		/*	case SLK_ReadMessage:
 			return "slack::readMessage"*/
 	default:

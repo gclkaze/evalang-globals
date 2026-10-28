@@ -425,6 +425,17 @@ const (
 	XML_FromRows
 	XML_ToCsv
 	JSN_ToXml
+	GIT_Create
+	GIT_Clone
+	GIT_Pull
+	GIT_Status
+	GIT_Log
+	GIT_Tag
+	GIT_Commit
+	GIT_Push
+	GIT_Checkout
+	GIT_Merge
+	GIT_CurrentBranch
 	//SLK_ReadMessage
 )
 
@@ -471,6 +482,7 @@ const (
 	EXCEL
 	SSH
 	XML
+	GIT
 )
 
 type JSONStruct = map[string]interface{}
@@ -588,6 +600,8 @@ func GetUserFriendlyType(e string) StatementParameterTypeBase {
 		return SSH
 	case "xml":
 		return XML
+	case "git":
+		return GIT
 	case "json package":
 		{
 			return JSON_PACKAGE
@@ -670,6 +684,8 @@ func (e StatementParameterTypeBase) String() string {
 		return "Ssh"
 	case XML:
 		return "Xml"
+	case GIT:
+		return "Git"
 	default:
 		return "Unknown"
 	}
@@ -1496,6 +1512,28 @@ func (e StatementOp) String() string {
 		return "xml::toCsv"
 	case JSN_ToXml:
 		return "json::toXml"
+	case GIT_Create:
+		return "git::create"
+	case GIT_Clone:
+		return "git::clone"
+	case GIT_Pull:
+		return "git::pull"
+	case GIT_Status:
+		return "git::status"
+	case GIT_Log:
+		return "git::log"
+	case GIT_Tag:
+		return "git::tag"
+	case GIT_Commit:
+		return "git::commit"
+	case GIT_Push:
+		return "git::push"
+	case GIT_Checkout:
+		return "git::checkout"
+	case GIT_Merge:
+		return "git::merge"
+	case GIT_CurrentBranch:
+		return "git::currentBranch"
 		/*	case SLK_ReadMessage:
 			return "slack::readMessage"*/
 	default:

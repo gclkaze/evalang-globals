@@ -436,6 +436,13 @@ const (
 	GIT_Checkout
 	GIT_Merge
 	GIT_CurrentBranch
+	ZUB_Create
+	ZUB_CreateCard
+	ZUB_GetCard
+	ZUB_FindCards
+	ZUB_CommentCard
+	ZUB_ArchiveCard
+	ZUB_CloseCard
 	//SLK_ReadMessage
 )
 
@@ -483,6 +490,7 @@ const (
 	SSH
 	XML
 	GIT
+	ZUBE
 )
 
 type JSONStruct = map[string]interface{}
@@ -602,6 +610,8 @@ func GetUserFriendlyType(e string) StatementParameterTypeBase {
 		return XML
 	case "git":
 		return GIT
+	case "zube":
+		return ZUBE
 	case "json package":
 		{
 			return JSON_PACKAGE
@@ -686,6 +696,8 @@ func (e StatementParameterTypeBase) String() string {
 		return "Xml"
 	case GIT:
 		return "Git"
+	case ZUBE:
+		return "Zube"
 	default:
 		return "Unknown"
 	}
@@ -1534,6 +1546,20 @@ func (e StatementOp) String() string {
 		return "git::merge"
 	case GIT_CurrentBranch:
 		return "git::currentBranch"
+	case ZUB_Create:
+		return "zube::create"
+	case ZUB_CreateCard:
+		return "zube::createCard"
+	case ZUB_GetCard:
+		return "zube::getCard"
+	case ZUB_FindCards:
+		return "zube::findCards"
+	case ZUB_CommentCard:
+		return "zube::commentCard"
+	case ZUB_ArchiveCard:
+		return "zube::archiveCard"
+	case ZUB_CloseCard:
+		return "zube::closeCard"
 		/*	case SLK_ReadMessage:
 			return "slack::readMessage"*/
 	default:

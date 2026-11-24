@@ -3,6 +3,7 @@ package utils
 import (
 	"context"
 	"fmt"
+	"log"
 	"os/exec"
 	"runtime"
 	"strings"
@@ -16,7 +17,7 @@ func IsProcessRunningWindows(processName string) bool {
 	cmd := exec.CommandContext(ctx, "tasklist", "/FO", "CSV", "/NH")
 	output, err := cmd.Output()
 	if err != nil {
-		fmt.Println("Error:", err)
+		log.Printf("couldn't list the running processes (tasklist): %v", err)
 		return false
 	}
 	return strings.Contains(strings.ToLower(string(output)), strings.ToLower(processName))

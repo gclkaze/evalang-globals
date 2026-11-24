@@ -114,10 +114,6 @@ func (s *JSONUtils) GetJSONVariableExpressionTokens(a *string) (res bool, myVar 
 		}
 	}
 
-	if s.Dbg {
-		fmt.Printf("tokens: %v\n", tokens)
-		fmt.Printf("p: %v\n", p)
-	}
 	//return true, &parameters.JsonParameterValue{CurrentPath: tokens, Name: tokens[0], Path: &p}
 	return true, &p
 }

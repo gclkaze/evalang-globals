@@ -443,6 +443,14 @@ const (
 	ZUB_CommentCard
 	ZUB_ArchiveCard
 	ZUB_CloseCard
+	CAP_Connect
+	CAP_Get
+	CAP_Capture
+	CAP_Commit
+	CAP_GetVersions
+	CAP_VersionExists
+	CAP_GetAmountOfVersions
+	CAP_CapsuleTransform
 	//SLK_ReadMessage
 )
 
@@ -491,6 +499,7 @@ const (
 	XML
 	GIT
 	ZUBE
+	CAPSULE
 )
 
 type JSONStruct = map[string]interface{}
@@ -612,6 +621,8 @@ func GetUserFriendlyType(e string) StatementParameterTypeBase {
 		return GIT
 	case "zube":
 		return ZUBE
+	case "capsule":
+		return CAPSULE
 	case "json package":
 		{
 			return JSON_PACKAGE
@@ -698,6 +709,8 @@ func (e StatementParameterTypeBase) String() string {
 		return "Git"
 	case ZUBE:
 		return "Zube"
+	case CAPSULE:
+		return "Capsule"
 	default:
 		return "Unknown"
 	}
@@ -1560,6 +1573,22 @@ func (e StatementOp) String() string {
 		return "zube::archiveCard"
 	case ZUB_CloseCard:
 		return "zube::closeCard"
+	case CAP_Connect:
+		return "capsule::connect"
+	case CAP_Get:
+		return "capsule::get"
+	case CAP_Capture:
+		return "capsule::capture"
+	case CAP_Commit:
+		return "capsule::commit"
+	case CAP_GetVersions:
+		return "capsule::getVersions"
+	case CAP_VersionExists:
+		return "capsule::versionExists"
+	case CAP_GetAmountOfVersions:
+		return "capsule::getAmountOfVersions"
+	case CAP_CapsuleTransform:
+		return "capsule::capsuleTransform"
 		/*	case SLK_ReadMessage:
 			return "slack::readMessage"*/
 	default:

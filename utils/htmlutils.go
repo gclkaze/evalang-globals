@@ -125,7 +125,6 @@ func ParseHTMLByXPATH(content string, xpath string) (value []string, err error) 
 func GetJSONFromHtml(h string) (j map[string]interface{}, err error) {
 	doc, err := html.Parse(strings.NewReader(h))
 	if err != nil {
-		fmt.Println(err)
 		return nil, err
 	}
 

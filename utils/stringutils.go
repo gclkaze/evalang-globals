@@ -4,7 +4,6 @@ import (
 	"database/sql"
 	"encoding/json"
 	"errors"
-	"fmt"
 	"log"
 	"os"
 	"path/filepath"
@@ -81,7 +80,6 @@ func GetAbsolutePath(filename string) (path string, err error) {
 
 func GetFirstIndexAndPath(expr string) (ind int, path string, err error) {
 	tokens := strings.Split(expr, ".")
-	fmt.Printf("tokens: %v\n", tokens)
 	indx, err := strconv.Atoi(tokens[1])
 	if err != nil {
 		return -1, "", err
@@ -100,7 +98,6 @@ func GetFirstIndexAndPath(expr string) (ind int, path string, err error) {
 func GetVarComponents(expr string) (v string, ind int, path string, err error) {
 	e := ReplaceBracketsWithDotsInExpr(expr)
 	tokens := strings.Split(e, ".")
-	fmt.Printf("tokens: %v\n", tokens)
 	indx, err := strconv.Atoi(tokens[1])
 	if err != nil {
 		return "", -1, "", err
